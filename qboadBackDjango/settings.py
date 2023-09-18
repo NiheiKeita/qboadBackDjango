@@ -9,8 +9,18 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
+from os.path import join, dirname
+from dotenv import load_dotenv
+
+
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+
+DSN = os.environ.get("DB_NAME")
+USN = os.environ.get("USER_NAME")
+PWD = os.environ.get("PASSWORD")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +41,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "apiapp.apps.ApiappConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
