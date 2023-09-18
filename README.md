@@ -1,4 +1,4 @@
-# qboadBackDjango
+# Django
 
 起動コマンド
 
