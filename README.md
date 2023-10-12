@@ -31,3 +31,7 @@ python manage.py migrate
 #### 2.python manage.py dbshell で接続
 
 .table で一覧見れるから、作成したテーブルができているか確認
+
+###API
+http://localhost:8000/api/choices.json
+上のやつで choice の中身がとれるようになった
