@@ -13,7 +13,7 @@ class PasswordResetSerializer(serializers.ModelSerializer):
         fields = '__all__'
         read_only_fields = ('created_at', 'updated_at')
 
-class ResultSolve(serializers.ModelSerializer):
+class ResultSolveSerializer(serializers.ModelSerializer):
     class Meta:
         model = ResultSolve
         fields = '__all__'
@@ -31,37 +31,37 @@ class QuestionSerializer(serializers.ModelSerializer):
         fields = '__all__'
         read_only_fields = ('created_at', 'updated_at')
         
-class Comment(serializers.ModelSerializer):
+class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = '__all__'
         read_only_fields = ('created_at', 'updated_at')
         
-class HashTag(serializers.ModelSerializer):
+class HashTagSerializer(serializers.ModelSerializer):
     class Meta:
         model = HashTag
         fields = '__all__'
         read_only_fields = ('created_at', 'updated_at')
         
-class QuestionLike(serializers.ModelSerializer):
+class QuestionLikeSerializer(serializers.ModelSerializer):
     class Meta:
         model = QuestionLike
         fields = '__all__'
         read_only_fields = ('created_at', 'updated_at')
         
-class Follow(serializers.ModelSerializer):
+class FollowSerializer(serializers.ModelSerializer):
     class Meta:
         model = Follow
         fields = '__all__'
         read_only_fields = ('created_at', 'updated_at')
         
-class MyList(serializers.ModelSerializer):
+class MyListSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyList
         fields = '__all__'
         read_only_fields = ('created_at', 'updated_at')
 
-class MyListQuestion(serializers.ModelSerializer):
+class MyListQuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyListQuestion
         fields = '__all__'

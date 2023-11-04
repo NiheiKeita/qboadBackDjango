@@ -40,3 +40,7 @@ http://localhost:8000/api/choices.json
 #### 論理削除ライブラリ
 
 pip3 install django_boost
+
+### API 参考
+
+https://chigusa-web.com/blog/django-rest-framework/
