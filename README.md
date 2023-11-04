@@ -13,7 +13,7 @@ python manage.py runserver
 #### 2.migration ファイルを作成
 
 ```bash
-python manage.py makemigrations apiapp
+python manage.py makemigrations
 ```
 
 #### 3. DB に登録
@@ -32,6 +32,11 @@ python manage.py migrate
 
 .table で一覧見れるから、作成したテーブルができているか確認
 
-###API
+### API
+
 http://localhost:8000/api/choices.json
 上のやつで choice の中身がとれるようになった
+
+#### 論理削除ライブラリ
+
+pip3 install django_boost
