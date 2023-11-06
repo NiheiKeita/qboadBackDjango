@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.views.decorators.csrf import csrf_protect
 
 from .models import Question, Choice, User, PasswordReset,ResultSolve,Comment,HashTag,QuestionLike,Follow,MyList,MyListQuestion
 from .serializers import UserSerializer,QuestionSerializer,ChoiceSerializer,PasswordResetSerializer,ResultSolveSerializer,CommentSerializer,HashTagSerializer,QuestionLikeSerializer,FollowSerializer,MyListSerializer,MyListQuestionSerializer
@@ -20,6 +21,9 @@ def users(request):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    # @api_view(['GET'])
+    # def users(self, request, pk=None):
+    #     return Response({'status': 'password set'})
     
 class QuestionViewSet(viewsets.ModelViewSet):
     queryset = Question.objects.all()

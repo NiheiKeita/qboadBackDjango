@@ -44,3 +44,10 @@ pip3 install django_boost
 ### API 参考
 
 https://chigusa-web.com/blog/django-rest-framework/
+https://meetup-jp.toast.com/931
+
+#### Windows で API たたき方
+
+```bash
+curl.exe -XPOST -d 'email=nihei2@example.com&password=nihei&user_name=nihei&unique_user_id=eeeeee' 'http://localhost:8000/api/users/'
+```

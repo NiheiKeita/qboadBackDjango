@@ -1,11 +1,26 @@
 from rest_framework import serializers
+import logging
+from django.utils.crypto import get_random_string
 from apiapp.models import Question, Choice, User, PasswordReset,ResultSolve,Comment,HashTag,QuestionLike,Follow,MyList,MyListQuestion
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
         read_only_fields = ('created_at', 'updated_at')
+    def create(self, validated_data):
+        validated_data['unique_user_id'] = self.createUniqueId()
+        return User.objects.create(**validated_data)
+
+    def createUniqueId(self):
+        result = get_random_string(10).lower()
+        queryset = User.objects.all()
+        if (queryset.filter(unique_user_id = result).count() > 0):
+            self.createUniqueId()
+        else:
+            return result
+
         
 class PasswordResetSerializer(serializers.ModelSerializer):
     class Meta:
