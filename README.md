@@ -51,3 +51,31 @@ https://meetup-jp.toast.com/931
 ```bash
 curl.exe -XPOST -d 'email=nihei2@example.com&password=nihei&user_name=nihei&unique_user_id=eeeeee' 'http://localhost:8000/api/users/'
 ```
+
+#### API の認証
+
+ライブラリインストール
+
+```bash
+pip install "djangorestframework-api-key==2.\*"
+```
+
+DB 反映
+
+```bash
+python manage.py migrate
+```
+
+APIKEY 作成
+
+```bash
+python manage.py shell
+Python 3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from rest_framework_api_key.models import APIKey
+>>> api_key, key = APIKey.objects.create_key(name="qlitre-api-key")
+>>> key
+'FFltOiuF.JfVmZk3FoDHUDinkBUT3DYfwLbq5xnuA'
+>>> exit()
+```
